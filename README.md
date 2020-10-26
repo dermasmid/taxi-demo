@@ -13,3 +13,8 @@ docker-compose up -d
 ```
 
 Now open a browser and go to [localhost:3000](http://localhost:3000/)
+
+## Note
+
+The container is meant to run locally because it tries to access a socket on localhost
+and it needs access to the users location which is not possible over the internet with an insecure connection
