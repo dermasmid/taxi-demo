@@ -1,0 +1,13 @@
+version: "3"
+services:
+ taxi:
+    build: .
+    ports:
+        - "3000:3000"
+        - "3002:3002"
+    depends_on:
+        - mongo
+ mongo:
+    image: mongo
+    ports:
+        - "27010:27017"
