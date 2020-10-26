@@ -1,6 +1,7 @@
 <p align="center">
     <img src="https://res.cloudinary.com/dermasmid/image/upload/v1603739999/taxi-icon_ndy6wy.png">
 </p>
+
 # Getting Started
 
 ``` bash
