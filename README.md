@@ -7,9 +7,19 @@
 ``` bash
 git clone https://github.com/dermasmid/taxi-demo
 cd taxi-demo
-docker-compose build
-docker-compose up -d
+```
 
+Now open the Docker file and enter your google api key
+
+```
+ENV APIKEY=your_key_here
+```
+
+Then you can build and start the container
+
+``` bash
+docker-compose build
+docker-compose up
 ```
 
 Now open a browser and go to [localhost:3000](http://localhost:3000/)
