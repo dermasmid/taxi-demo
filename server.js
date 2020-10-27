@@ -12,7 +12,8 @@ mongoose.connect('mongodb://mongo:27017/taxiDemo', {useNewUrlParser: true, useUn
 const taxiSchema = new mongoose.Schema({
     name: String, 
     location: Array,
-    busy: Boolean
+    busy: Boolean,
+    id: String
 })
 const taxiModel = mongoose.model('taxis', taxiSchema);
 
@@ -22,7 +23,7 @@ const taxiModel = mongoose.model('taxis', taxiSchema);
 taxiModel.find((err, data) => {
     if (data.length === 0) {
         utils.taxiData.forEach((item, index) => {
-            let taxi = new taxiModel({ name: item.name, location: item.location, busy: item.busy});
+            let taxi = new taxiModel({ name: item.name, location: item.location, busy: item.busy, id: item.id});
             taxi.save()
         })
         

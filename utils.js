@@ -9,37 +9,44 @@ exports.taxiData = [
     {
         name: 'Adams',
         location: [32.075287, 34.833164],
-        busy: false
+        busy: false,
+        id: '1'
     },
     {
         name: 'Baker',
         location: [32.076236, 34.824989],
-        busy: false
+        busy: false,
+        id: '2'
     },
     {
-        name: 'Quinn',
+        name: 'Noah',
         location: [32.090611, 34.819228],
-        busy: false
+        busy: false,
+        id: '3'
     },
     {
         name: 'Smith',
         location: [32.081531, 34.807235],
-        busy: false
+        busy: false,
+        id: '4'
     },
     {
-        name: 'Nalty',
+        name: 'Jacob',
         location: [32.089271, 34.834437],
-        busy: false
+        busy: false,
+        id: '5'
     },
     {
         name: 'Lopez',
         location: [32.108339, 34.849628],
-        busy: false
+        busy: false,
+        id: '6'
     },
     {
         name: 'Mason',
         location: [32.105059, 34.805794],
-        busy: false
+        busy: false,
+        id: '7'
     }
 ]
 
