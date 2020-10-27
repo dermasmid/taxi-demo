@@ -99,8 +99,8 @@ exports.getDirections = (taxiLocation, userLocation, destenation, callback) => {
 }
 
 
-exports.sendDirections = (path, socket) => {
-    socket.emit('taxiPath', path)
+exports.sendDirections = (path, taxi, socket) => {
+    socket.emit('taxiPath', {path, taxi})
 }
 
 
@@ -124,5 +124,5 @@ exports.driveTaxi = (path, io, taxiDb, socket, index) => {
                 taxiDb.save()
         }, 200)
         }
-    }, 1750)
+    }, 2000)
 }

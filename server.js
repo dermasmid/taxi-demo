@@ -51,7 +51,7 @@ io.on('connection',(socket) => {
     socket.on('taxiRequest',(request) => {
         utils.getNearestTaxi(request.from, taxiModel, (taxi) => {
             utils.getDirections(taxi.location, request.from, request.to, (path) => {
-                utils.sendDirections(path, socket)
+                utils.sendDirections(path, taxi, socket);
                 taxiModel.findById(taxi._id, (err, taxiDb) => {
                     taxiDb.busy = true
                     taxiDb.save()
