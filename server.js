@@ -3,6 +3,7 @@ const socketIO = require('socket.io');
 const http = require('http');
 const express = require("express");
 const mongoose = require('mongoose');
+const ejs = require('ejs');
 const app = express();
 
 
@@ -67,11 +68,13 @@ io.on('connection',(socket) => {
 });
 
 // run webserver
-app.set('view engine', 'ejs');
-app.use(express.static('taxi-demo'))
 app.get('/',(req, res) => {
-    res.render('index', {apiKey: process.env.APIKEY})
+    ejs.renderFile('taxi-demo/index.html', {apiKey: process.env.APIKEY}, (err, html) => {
+        res.send(html)
+    })
 })
+app.use(express.static('taxi-demo'))
+
 app.listen(3000)
 
 
