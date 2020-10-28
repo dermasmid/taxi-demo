@@ -10,6 +10,7 @@ const app = express();
 // connect to database (and if there isn't one - it makes it)
 mongoose.connect('mongodb://mongo:27017/taxiDemo', {useNewUrlParser: true, useUnifiedTopology: true});
 
+// make the taxi model
 const taxiSchema = new mongoose.Schema({
     name: String, 
     location: Array,
@@ -34,13 +35,12 @@ taxiModel.find((err, data) => {
 
 
 
-
+// make a socket server
 const server = http.Server(app);
-
 server.listen(3002);
-
 const io = socketIO(server);
 
+// listen for new connections
 io.on('connection',(socket) => {
     socket.on('getTaxis',(message) => { 
         mongoose.model('taxis', taxiSchema).find((err, data) => {
@@ -74,7 +74,4 @@ app.get('/',(req, res) => {
     })
 })
 app.use(express.static('taxi-demo'))
-
 app.listen(3000)
-
-
